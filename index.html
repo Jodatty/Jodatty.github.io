@@ -60,9 +60,9 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;font-size:16px;color:var(--text);background:var(--cream);line-height:1.7;padding-bottom:0}
 
-.big-logo{background:var(--cream);text-align:center;padding:32px 20px 20px}
-.big-logo img{width:100%;max-width:552px;height:auto;display:inline-block}
-@media(max-width:600px){.big-logo img{max-width:384px}}
+.hero-logo-card{display:inline-block;background:var(--cream);border-radius:8px;padding:24px 32px 16px;margin-bottom:28px;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.hero-logo-card img{width:100%;max-width:552px;height:auto;display:block;margin:0 auto}
+@media(max-width:600px){.hero-logo-card img{max-width:384px}}
 .flag-stripe div{flex:1}
 .flag-stripe div:nth-child(1){background:var(--red)}
 .flag-stripe div:nth-child(2){background:#fff}
@@ -135,6 +135,7 @@ nav{background:var(--navy);padding:14px 32px;display:flex;justify-content:space-
 .gallery-item[data-id="steam-shower"] .gallery-photo img{object-position:center top}
 .gallery-item[data-id="wine-room"] .gallery-photo img{object-position:center top;transform:scale(1.18);transform-origin:center top}
 .gallery-item[data-id="wine-room"] .gallery-photo{overflow:hidden}
+.gallery-item[data-id="backsplash"] .gallery-photo{height:520px}
 .gallery-item[data-id="mirror"] .gallery-photo,.gallery-item[data-id="office"] .gallery-photo{height:230px}
 .photo-pair{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:4px;width:100%;height:100%;background:#ffffff}
 .photo-pair img{width:100%;height:100%;object-fit:cover;display:block}
@@ -193,9 +194,8 @@ footer a{color:var(--penny);text-decoration:none}
 
 <div class="flag-stripe"><div></div><div></div><div></div></div>
 
-<div class="big-logo"><img src="lincoln-shower-door-logo.svg" alt="Lincoln Shower Door of Charlotte logo"></div>
-
 <div class="hero">
+  <div class="hero-logo-card"><img src="lincoln-shower-door-logo.svg" alt="Lincoln Shower Door of Charlotte logo"></div>
   <p class="hero-eyebrow">Charlotte's Honest Shower Door Installer</p>
   <h1>Charlotte&rsquo;s Frameless Shower Door Contractor.<br><span>&ldquo;Make Every Penny Count.&rdquo;</span></h1>
   <p class="hero-sub">Frameless shower doors, glass wine rooms, custom mirrors, railings, and office partitions &mdash; designed right, installed right, every time.</p>
@@ -384,7 +384,7 @@ footer a{color:var(--penny);text-decoration:none}
   <p style="margin-top:16px;font-size:0.72rem;color:#334">&copy; Lincoln Shower Door of Charlotte. All rights reserved.</p>
 </footer>
 
-<div class="vision-tray" id="visionTray" onclick="location.href='quote.html'">
+<div class="vision-tray" id="visionTray" onclick="location.href='estimate.html'">
   <span class="count" id="visionCount">0</span>
   <span>Saved &mdash; view your picks</span>
 </div>
@@ -409,7 +409,7 @@ function toggleSave(evt, id, label) {
   const btn = evt.currentTarget;
   let saved = getSaved();
   const idx = saved.findIndex(s => s.id === id);
-  const commentBox = btn.parentElement.querySelector('.comment-box');
+  const commentBox = btn.closest('.gallery-item').querySelector('.comment-box');
   if (idx >= 0) {
     saved.splice(idx, 1);
     btn.classList.remove('saved');
