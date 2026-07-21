@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lincolnshowerdoor.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-steam-shower-enclosure-charlotte-nc.jpg</image:loc>
+      <image:caption>Custom frameless glass steam shower enclosure Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-glass-wine-room-charlotte-nc.jpg</image:loc>
+      <image:caption>Custom glass wine room enclosure Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-backpainted-glass-backsplash-charlotte-nc-1.jpg</image:loc>
+      <image:caption>White back painted glass kitchen backsplash Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-backpainted-glass-backsplash-charlotte-nc-2.jpg</image:loc>
+      <image:caption>Back painted glass kitchen backsplash behind sink Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-custom-vanity-mirror-charlotte-nc.jpg</image:loc>
+      <image:caption>Custom bathroom vanity mirror Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-glass-office-partitions-charlotte-nc.jpg</image:loc>
+      <image:caption>Frameless glass office partitions Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-glass-pool-railing-charlotte-nc.jpg</image:loc>
+      <image:caption>Frameless glass pool railing Charlotte NC</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/process.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-walk-in-shower-panel-charlotte-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass frameless walk-in shower screen, Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-neo-angle-shower-enclosure-belmont-nc.jpg</image:loc>
+      <image:caption>Starphire low-iron glass neo-angle shower enclosure, brushed nickel hinged door, Belmont NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-hinged-steam-shower-enclosure-gastonia-nc.jpg</image:loc>
+      <image:caption>Starphire low-iron ultra-clear glass frameless steam shower enclosure with hinged door, brushed nickel hardware, Gastonia NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-hinged-shower-door-arch-transom-gastonia-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass hinged shower door with arched top transom, satin brass hardware, Gastonia NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-sliding-tub-door-belmont-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass frameless sliding tub door, chrome hardware, Belmont NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-semi-frameless-sliding-tub-door-mount-holly-nc.jpg</image:loc>
+      <image:caption>Semi-frameless sliding tub door, matte black Euro-style header, Mount Holly NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-pivot-door-shower-enclosure-charlotte-nc.jpg</image:loc>
+      <image:caption>Opti-white low-iron crystal clear 1/2-inch glass pivot shower door, chrome hardware, Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-custom-mirror-cutouts-charlotte-nc.jpg</image:loc>
+      <image:caption>Custom-cut frameless mirror with precision lighting and outlet cutouts, Charlotte NC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-laser-layout-mirror-cutouts-charlotte-nc.jpg</image:loc>
+      <image:caption>Laser layout for custom mirror cutouts, right wall, with wired outlet points and shower enclosure reflected, Charlotte NC</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/estimate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
