@@ -67,7 +67,7 @@ nav{background:var(--navy);padding:14px 32px;display:flex;justify-content:space-
 .style-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
 .style-card{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .style-photo{position:relative;line-height:0}
-.style-photo img{width:100%;height:150px;object-fit:cover;display:block}
+.style-photo img{width:100%;height:340px;object-fit:cover;display:block;cursor:zoom-in}
 .heart-btn{position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.9);border:none;font-size:1.1rem;color:var(--penny);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .1s}
 .heart-btn:hover{transform:scale(1.1)}
 .heart-btn.liked{color:#fff;background:var(--penny)}
@@ -267,7 +267,7 @@ footer a{color:var(--penny);text-decoration:none}
   <div class="style-gallery">
     <div class="style-card" data-style="Frameless Walk-In Shower Screen">
       <div class="style-photo">
-        <img src="gallery-walk-in-shower-panel-charlotte-nc.jpg" alt="Clear tempered glass frameless walk-in shower screen, Charlotte NC" loading="lazy">
+        <img src="gallery-walk-in-shower-panel-charlotte-nc.jpg" alt="Clear tempered glass frameless walk-in shower screen, Charlotte NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Frameless Walk-In Shower Screen')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Frameless Walk-In Shower Screen</h4>
@@ -275,7 +275,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Neo-Angle Enclosure">
       <div class="style-photo">
-        <img src="gallery-neo-angle-shower-enclosure-belmont-nc.jpg" alt="Starphire low-iron glass neo-angle shower enclosure, brushed nickel hinged door, Belmont NC" loading="lazy">
+        <img src="gallery-neo-angle-shower-enclosure-belmont-nc.jpg" alt="Starphire low-iron glass neo-angle shower enclosure, brushed nickel hinged door, Belmont NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Neo-Angle Enclosure')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Neo-Angle Enclosure</h4>
@@ -283,7 +283,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Frameless Steam Enclosure">
       <div class="style-photo">
-        <img src="gallery-hinged-steam-shower-enclosure-gastonia-nc.jpg" alt="Starphire low-iron ultra-clear glass frameless steam shower enclosure with hinged door, brushed nickel hardware, Gastonia NC" loading="lazy">
+        <img src="gallery-hinged-steam-shower-enclosure-gastonia-nc.jpg" alt="Starphire low-iron ultra-clear glass frameless steam shower enclosure with hinged door, brushed nickel hardware, Gastonia NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Frameless Steam Enclosure')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Frameless Steam Enclosure</h4>
@@ -291,7 +291,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Frameless Hinged Door">
       <div class="style-photo">
-        <img src="gallery-hinged-shower-door-arch-transom-gastonia-nc.jpg" alt="Clear tempered glass hinged shower door with arched top transom, satin brass hardware, Gastonia NC" loading="lazy">
+        <img src="gallery-hinged-shower-door-arch-transom-gastonia-nc.jpg" alt="Clear tempered glass hinged shower door with arched top transom, satin brass hardware, Gastonia NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Frameless Hinged Door')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Frameless Hinged Door</h4>
@@ -299,7 +299,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Frameless Sliding Door">
       <div class="style-photo">
-        <img src="gallery-sliding-tub-door-belmont-nc.jpg" alt="Clear tempered glass frameless sliding tub door, chrome hardware, Belmont NC" loading="lazy">
+        <img src="gallery-sliding-tub-door-belmont-nc.jpg" alt="Clear tempered glass frameless sliding tub door, chrome hardware, Belmont NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Frameless Sliding Door')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Frameless Sliding Door</h4>
@@ -307,7 +307,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Semi-Frameless Door">
       <div class="style-photo">
-        <img src="gallery-semi-frameless-sliding-tub-door-mount-holly-nc.jpg" alt="Semi-frameless sliding tub door, matte black Euro-style header, Mount Holly NC" loading="lazy">
+        <img src="gallery-semi-frameless-sliding-tub-door-mount-holly-nc.jpg" alt="Semi-frameless sliding tub door, matte black Euro-style header, Mount Holly NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Semi-Frameless Door')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Semi-Frameless Door</h4>
@@ -315,7 +315,7 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Frameless Pivot Door">
       <div class="style-photo">
-        <img src="gallery-pivot-door-shower-enclosure-charlotte-nc.jpg" alt="Opti-white low-iron crystal clear 1/2-inch glass pivot shower door, chrome hardware, Charlotte NC" loading="lazy">
+        <img src="gallery-pivot-door-shower-enclosure-charlotte-nc.jpg" alt="Opti-white low-iron crystal clear 1/2-inch glass pivot shower door, chrome hardware, Charlotte NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Frameless Pivot Door')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Frameless Pivot Door</h4>
@@ -323,13 +323,13 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
     <div class="style-card" data-style="Custom Mirror">
       <div class="style-photo">
-        <img src="gallery-custom-mirror-cutouts-charlotte-nc.jpg" alt="Custom-cut frameless mirror with precision lighting and outlet cutouts, Charlotte NC" loading="lazy">
+        <img src="gallery-custom-mirror-cutouts-charlotte-nc.jpg" alt="Custom-cut frameless mirror with precision lighting and outlet cutouts, Charlotte NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <button class="heart-btn" onclick="toggleLike(this,'Custom Mirror')" aria-label="Save this style">&#9825;</button>
       </div>
       <h4>Custom Mirror</h4>
       <p>Cut to fit walls that were never quite square, with precision openings for lighting and outlets.</p>
       <div class="style-inset">
-        <img src="gallery-laser-layout-mirror-cutouts-charlotte-nc.jpg" alt="Laser layout for custom mirror cutouts, right wall, with wired outlet points and shower enclosure reflected, Charlotte NC" loading="lazy">
+        <img src="gallery-laser-layout-mirror-cutouts-charlotte-nc.jpg" alt="Laser layout for custom mirror cutouts, right wall, with wired outlet points and shower enclosure reflected, Charlotte NC" loading="lazy" onclick="openLightbox(this.src)" style="cursor:zoom-in">
         <span>Laser-measured before the mirror ever gets cut &mdash; same job as the pivot door shown above.</span>
       </div>
     </div>
