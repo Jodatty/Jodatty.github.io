@@ -111,7 +111,8 @@ nav{background:var(--navy);padding:14px 32px;display:flex;justify-content:space-
 .quiz-opt-lg img{max-width:156px}
 .quiz-options.three .quiz-opt img{width:120px;max-width:120px;height:130px;object-fit:contain}
 .quiz-opt:hover{border-color:var(--penny-light)}
-.quiz-opt.selected{border-color:var(--penny);background:#fdf3ea;font-weight:600}
+.quiz-opt.selected{border-color:var(--penny);font-weight:600;position:relative}
+.quiz-opt.selected::after{content:'\2713';position:absolute;top:8px;right:8px;width:20px;height:20px;border-radius:50%;background:var(--penny);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;line-height:1}
 
 .glass-compare{position:relative;border-radius:6px;overflow:hidden;border:1px solid var(--border);line-height:0}
 .glass-compare-img{width:100%;display:block}
@@ -119,7 +120,10 @@ nav{background:var(--navy);padding:14px 32px;display:flex;justify-content:space-
 .glass-hotspot-left{left:0}
 .glass-hotspot-right{right:0}
 .glass-hotspot:hover{background:rgba(184,115,51,0.12)}
-.glass-hotspot.selected{background:rgba(184,115,51,0.16);box-shadow:inset 0 0 0 4px var(--penny)}
+.glass-hotspot.selected{box-shadow:inset 0 0 0 3px var(--penny)}
+.glass-hotspot.selected::after{content:'\2713';position:absolute;top:8px;width:20px;height:20px;border-radius:50%;background:var(--penny);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;line-height:1}
+.glass-hotspot-left.selected::after{left:8px}
+.glass-hotspot-right.selected::after{right:8px}
 .glass-labels{display:grid;grid-template-columns:1fr 1fr;margin-top:12px}
 .glass-labels span{text-align:center;font-size:0.9rem;color:var(--text);padding:0 8px}
 .glass-labels span.active{color:var(--penny);font-weight:700}
@@ -234,9 +238,7 @@ footer a{color:var(--penny);text-decoration:none}
       <span class="tag">Elevation View</span>
       <h3>Straight-On Elevation</h3>
       <p>An elevation &mdash; a straight-on, flat view of the wall you're glazing &mdash; is what we actually need. A plan view (looking down from above) shows floor footprint, not wall height, door swing, or curb detail, so it can't carry a real design. If you have architectural drawings on hand, send the elevation sheet, not the plan sheet.</p>
-      <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px;margin-top:6px">
-        <img src="example-elevation-drawing.jpg" loading="lazy" style="width:100%;display:block" alt="Guest bath elevation drawing">
-      </div>
+      <img src="example-elevation-drawing.jpg" loading="lazy" style="width:100%;display:block;border:1px solid var(--border);border-radius:4px;margin-top:6px" alt="Guest bath elevation drawing">
     </div>
     <div class="proof-card">
       <span class="tag">Tile Complete</span>
@@ -335,28 +337,6 @@ footer a{color:var(--penny);text-decoration:none}
 </section>
 
 <section class="section-wrap">
-  <p class="section-label">What Happens After You Say Yes</p>
-  <h2>Two Quotes, Not One</h2>
-  <p class="intro-text">Every customer gets at least two quote sheets. The initial quote is detailed enough to review, share with a partner or contractor, and revise before anything moves forward. Then we measure on site &mdash; almost no wall or floor is perfectly plumb and level, even within a sixteenth of an inch &mdash; and send a final drawing with your confirmed choices for your written approval. Nothing gets ordered until you've signed off on that final version, so what gets built always matches exactly what you agreed to.</p>
-  <div class="doc-flow">
-    <div class="doc-flow-step">
-      <span class="doc-flow-num">1</span>
-      <h4>Initial Quote</h4>
-      <p>Priced from your photos and rough measurements. Review it, talk it over, ask for changes.</p>
-    </div>
-    <div class="doc-flow-arrow" aria-hidden="true">
-      <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><line x1="2" y1="12" x2="50" y2="12" stroke="var(--penny)" stroke-width="2"/><polygon points="50,5 60,12 50,19" fill="var(--penny)"/></svg>
-      <span>site measure</span>
-    </div>
-    <div class="doc-flow-step">
-      <span class="doc-flow-num">2</span>
-      <h4>Final Approved Drawing</h4>
-      <p>Confirmed to the sixteenth of an inch, with your final hardware and design choices. Signed before anything is ordered.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-wrap">
   <p class="section-label">Tell Us Your Style</p>
   <h2>What Do You Like?</h2>
   <p class="intro-text">Tap whatever catches your eye &mdash; just a starting point, nothing final. It gets saved and sent along with your estimate request, so we have a head start on the conversation.</p>
@@ -409,6 +389,28 @@ footer a{color:var(--penny);text-decoration:none}
     </div>
   </div>
 </section>
+<section class="section-wrap">
+  <p class="section-label">What Happens After You Say Yes</p>
+  <h2>Two Quotes, Not One</h2>
+  <p class="intro-text">Every customer gets at least two quote sheets. The initial quote is detailed enough to review, share with a partner or contractor, and revise before anything moves forward. Then we measure on site &mdash; almost no wall or floor is perfectly plumb and level, even within a sixteenth of an inch &mdash; and send a final drawing with your confirmed choices for your written approval. Nothing gets ordered until you've signed off on that final version, so what gets built always matches exactly what you agreed to.</p>
+  <div class="doc-flow">
+    <div class="doc-flow-step">
+      <span class="doc-flow-num">1</span>
+      <h4>Initial Quote</h4>
+      <p>Priced from your photos and rough measurements. Review it, talk it over, ask for changes.</p>
+    </div>
+    <div class="doc-flow-arrow" aria-hidden="true">
+      <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg"><line x1="2" y1="12" x2="50" y2="12" stroke="var(--penny)" stroke-width="2"/><polygon points="50,5 60,12 50,19" fill="var(--penny)"/></svg>
+      <span>site measure</span>
+    </div>
+    <div class="doc-flow-step">
+      <span class="doc-flow-num">2</span>
+      <h4>Final Approved Drawing</h4>
+      <p>Confirmed to the sixteenth of an inch, with your final hardware and design choices. Signed before anything is ordered.</p>
+    </div>
+  </div>
+</section>
+
 
 <div class="mid-cta">
   <h3>Ready to send us a photo?</h3>
@@ -449,25 +451,34 @@ function toggleLike(btn, label) {
 }
 function selectGlass(el, label) {
   const container = el.closest('.glass-compare');
+  const wasSelected = el.classList.contains('selected');
   container.querySelectorAll('.glass-hotspot').forEach(h => h.classList.remove('selected'));
-  el.classList.add('selected');
   const labelsWrap = container.nextElementSibling;
   labelsWrap.querySelectorAll('span').forEach(s => s.classList.remove('active'));
-  const isLeft = el.classList.contains('glass-hotspot-left');
-  (isLeft ? labelsWrap.children[0] : labelsWrap.children[1]).classList.add('active');
   const prefs = getPrefs();
-  prefs['glass'] = label;
+  if (wasSelected) {
+    delete prefs['glass'];
+  } else {
+    el.classList.add('selected');
+    const isLeft = el.classList.contains('glass-hotspot-left');
+    (isLeft ? labelsWrap.children[0] : labelsWrap.children[1]).classList.add('active');
+    prefs['glass'] = label;
+  }
   localStorage.setItem('lsd_hardware_prefs', JSON.stringify(prefs));
 }
 function selectOpt(el) {
+  const wasSelected = el.classList.contains('selected');
   const siblings = el.parentElement.querySelectorAll('.quiz-opt');
   siblings.forEach(s => s.classList.remove('selected'));
-  el.classList.add('selected');
-
   const question = el.closest('.quiz-q').dataset.question;
-  const label = el.textContent.trim();
   const prefs = getPrefs();
-  prefs[question] = label;
+  if (wasSelected) {
+    delete prefs[question];
+  } else {
+    el.classList.add('selected');
+    const label = el.textContent.trim();
+    prefs[question] = label;
+  }
   localStorage.setItem('lsd_hardware_prefs', JSON.stringify(prefs));
 }
 document.addEventListener('DOMContentLoaded', () => {
