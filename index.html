@@ -75,13 +75,21 @@ body{font-family:'Inter',sans-serif;font-size:16px;color:var(--text);background:
 .sticky-cta a{color:#fff;font-weight:700;font-size:1rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase}
 @media(max-width:600px){.sticky-cta{display:block}body{padding-bottom:60px}}
 
-nav{background:var(--navy);padding:14px 32px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+nav{background:var(--navy);padding:14px 32px 14px 12px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .nav-logo img{height:78px;display:block;border-radius:3px}
 .nav-links{display:flex;gap:24px;align-items:center}
 .nav-links a{color:#ccc;text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--penny)}
 .nav-cta{background:var(--penny);color:#fff !important;padding:8px 18px;border-radius:2px}
 .nav-cta:hover{background:var(--penny-light) !important}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;align-items:center;justify-content:center}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;background:#fff;height:2px;width:24px;border-radius:2px;position:relative;transition:background .2s}
+.nav-toggle span::before,.nav-toggle span::after{content:'';position:absolute;left:0}
+.nav-toggle span::before{top:-7px}
+.nav-toggle span::after{top:7px}
+.nav-toggle[aria-expanded="true"] span{background:transparent}
+.nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
 
 .hero{background-color:var(--navy);background-image:linear-gradient(90deg, rgba(10,22,40,0.25) 0%, rgba(10,22,40,0.97) 22%, rgba(10,22,40,0.97) 78%, rgba(10,22,40,0.25) 100%),url('blueprint-watermark.png'),url('blueprint-watermark.png');background-repeat:no-repeat,no-repeat,no-repeat;background-position:center,left -80px top 60%,right -80px top 60%;background-size:100% 100%,640px auto,640px auto;color:#fff;padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden}
 @media (max-width:900px){.hero{background-size:100% 100%,380px auto,380px auto}}
@@ -170,8 +178,11 @@ footer a{color:var(--penny);text-decoration:none}
 }
 @media(max-width:600px){
   nav{padding:10px 16px}
-  .nav-links{gap:12px}
-  .nav-links a{font-size:0.75rem}
+  .nav-toggle{display:flex}
+  .nav-links{order:3;width:100%;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;max-height:0;overflow:hidden;transition:max-height .25s ease}
+  .nav-links.open{max-height:400px;margin-top:14px;border-top:1px solid rgba(255,255,255,0.1)}
+  .nav-links a{padding:16px 24px;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .nav-cta{margin:12px 24px;text-align:center;border-radius:2px}
   .hero{padding:56px 20px 80px}
   .section-wrap{padding:48px 20px}
   .story-band,.mid-cta{padding:48px 20px}
@@ -186,8 +197,9 @@ footer a{color:var(--penny);text-decoration:none}
 </div>
 
 <nav>
-  <div class="nav-logo"><img src="lincoln-shower-door-logo.svg" width="500" height="410" alt="Lincoln Shower Door of Charlotte logo"></div>
-  <div class="nav-links">
+  <a class="nav-logo" href="index.html" aria-label="Lincoln Shower Door of Charlotte home"><img src="lincoln-shower-door-logo.svg" width="500" height="410" alt="Lincoln Shower Door of Charlotte logo"></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
     <a href="process.html">Process</a>
@@ -453,6 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   updateTray();
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 });
 </script>
 
