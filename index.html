@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap">
-<meta name="description" content="Charlotte, NC's frameless shower door and custom glass contractor. Frameless shower doors, steam units, glass wine rooms, mirrors, railings, office partitions, and back painted glass backsplashes. Over 20 years experience, licensed glazier.">
+<meta name="description" content="Charlotte, NC's frameless shower door and custom glass contractor. Frameless shower doors, steam units, glass wine rooms, mirrors, railings, office partitions, and back painted glass backsplashes. 20+ years of glass fabrication and installation experience.">
 
 <script type="application/ld+json">
 {
@@ -194,12 +194,22 @@ footer a{color:var(--penny);text-decoration:none}
   .story-band,.mid-cta{padding:48px 20px}
   .trust-bar{gap:20px;padding:14px 20px}
 }
+/* Contact options: estimate form on desktop; call and text on mobile. */
+.mobile-contact{display:none}
+.sticky-cta{gap:16px;justify-content:center;align-items:center}
+.sticky-cta a{font-size:.8rem}
+@media(max-width:600px){
+  .desktop-contact{display:none}
+  div.mobile-contact{display:flex;flex-direction:column;align-items:center;gap:12px}
+  a.mobile-contact{display:inline-block}
+  .sticky-cta{display:flex}
+}
 </style>
 </head>
 <body>
 
 <div class="sticky-cta">
-  <a href="tel:+17047501245">Call or Text for a Free Estimate &rarr;</a>
+  <a href="tel:+17047501245">Call for a Free Estimate</a> <a href="sms:+17047501245">Text a Photo &rarr;</a>
 </div>
 
 <nav>
@@ -226,7 +236,11 @@ footer a{color:var(--penny);text-decoration:none}
     <div class="hero-trust-item"><strong>Free</strong>&nbsp;Estimates</div>
     <div class="hero-trust-item"><strong>No</strong>&nbsp;Showroom Markup</div>
   </div>
-  <a href="tel:+17047501245" class="hero-cta-primary">Call or Text for a Free Estimate</a>
+  <a href="estimate.html" class="hero-cta-primary desktop-contact">Get a Free Estimate</a>
+  <div class="mobile-contact">
+    <a href="tel:+17047501245" class="hero-cta-primary">Call for a Free Estimate</a>
+    <a href="sms:+17047501245" class="btn-secondary">Text a Photo</a>
+  </div>
   <p class="hero-cta-sub">No pressure. No surprises. Written price before you commit.</p>
   <p class="hero-area">Charlotte &bull; Matthews &bull; Huntersville &bull; Fort Mill &bull; Gastonia &bull; and surrounding areas</p>
 </div>
@@ -258,7 +272,8 @@ footer a{color:var(--penny);text-decoration:none}
   <p>Send a photo, get a sample plan, and know your price before you commit &mdash; no showroom visit required.</p>
   <div class="mid-cta-choices">
     <a href="estimate.html" class="btn-primary">Get a Quote from a Photo</a>
-    <a href="tel:+17047501245" class="btn-secondary">Call or Text Instead</a>
+    <a href="tel:+17047501245" class="btn-secondary mobile-contact">Call Instead</a>
+    <a href="sms:+17047501245" class="btn-secondary mobile-contact">Text a Photo</a>
     <a href="process.html?style=frameless-shower-doors" class="btn-secondary">See Our Process</a>
   </div>
   <span class="btn-sub">Serving the greater Charlotte, NC metro area</span>
