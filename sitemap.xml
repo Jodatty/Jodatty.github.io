@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lincolnshowerdoor.com/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/process.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -82,5 +82,44 @@
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/shower-doors-gastonia.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-hinged-steam-shower-enclosure-gastonia-nc.jpg</image:loc>
+      <image:caption>Frameless steam shower enclosure with hinged door and brushed nickel hardware</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-hinged-shower-door-arch-transom-gastonia-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass hinged shower door with arched top transom and satin brass hardware</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-neo-angle-shower-enclosure-belmont-nc.jpg</image:loc>
+      <image:caption>Starphire low-iron glass neo-angle shower enclosure with hinged door and brushed nickel hardware</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/shower-doors-belmont.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-neo-angle-shower-enclosure-belmont-nc.jpg</image:loc>
+      <image:caption>Starphire low-iron glass neo-angle shower enclosure with brushed nickel hinged door</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-sliding-tub-door-belmont-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass frameless sliding tub door with chrome hardware</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/gallery-walk-in-shower-panel-charlotte-nc.jpg</image:loc>
+      <image:caption>Clear tempered glass frameless walk-in shower screen</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/gallery.html</loc>
   </url>
 </urlset>

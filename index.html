@@ -8,13 +8,25 @@
 <link rel="canonical" href="https://lincolnshowerdoor.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="blueprint-watermark.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"></noscript>
 <meta name="description" content="Charlotte, NC's frameless shower door and custom glass contractor. Frameless shower doors, steam units, glass wine rooms, mirrors, railings, office partitions, and back painted glass backsplashes. 20+ years of glass fabrication and installation experience.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lincoln Shower Door of Charlotte">
+<meta property="og:title" content="Lincoln Shower Door of Charlotte | Custom Frameless Glass Contractor">
+<meta property="og:description" content="Charlotte, NC's frameless shower door and custom glass contractor. Frameless shower doors, steam units, glass wine rooms, mirrors, railings, office partitions, and back painted glass backsplashes. 20+ years of glass fabrication and installation experience.">
+<meta property="og:url" content="https://lincolnshowerdoor.com/">
+<meta property="og:image" content="https://lincolnshowerdoor.com/gallery-steam-shower-enclosure-charlotte-nc.jpg">
+<meta property="og:image:alt" content="Custom frameless glass steam shower enclosure">
+<meta name="twitter:card" content="summary_large_image">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://lincolnshowerdoor.com/#business",
   "name": "Lincoln Shower Door of Charlotte",
   "description": "Custom frameless glass shower doors, wine rooms, mirrors, railings, office partitions, and back painted glass backsplashes serving the Charlotte, NC metro area.",
   "telephone": "+1-704-750-1245",
@@ -97,7 +109,7 @@ nav{background:var(--navy);padding:14px 32px 14px 0;display:flex;flex-wrap:wrap;
 .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
 
-.hero{background-color:var(--navy);background-image:linear-gradient(90deg, rgba(10,22,40,0.25) 0%, rgba(10,22,40,0.97) 22%, rgba(10,22,40,0.97) 78%, rgba(10,22,40,0.25) 100%),url('blueprint-watermark.png'),url('blueprint-watermark.png');background-repeat:no-repeat,no-repeat,no-repeat;background-position:center,left -80px top 60%,right -80px top 60%;background-size:100% 100%,640px auto,640px auto;color:#fff;padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden}
+.hero{background-color:var(--navy);background-image:linear-gradient(90deg, rgba(10,22,40,0.25) 0%, rgba(10,22,40,0.97) 22%, rgba(10,22,40,0.97) 78%, rgba(10,22,40,0.25) 100%),url('blueprint-watermark.webp'),url('blueprint-watermark.webp');background-repeat:no-repeat,no-repeat,no-repeat;background-position:center,left -80px top 60%,right -80px top 60%;background-size:100% 100%,640px auto,640px auto;color:#fff;padding:72px 32px 64px;text-align:center;position:relative;overflow:hidden}
 @media (max-width:900px){.hero{background-size:100% 100%,380px auto,380px auto}}
 .hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(184,115,51,0.04) 40px,rgba(184,115,51,0.04) 41px)}
 .hero>*{position:relative;z-index:1}
@@ -148,6 +160,7 @@ nav{background:var(--navy);padding:14px 32px 14px 0;display:flex;flex-wrap:wrap;
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}
 .gallery-item{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
 .gallery-photo{position:relative;height:400px;background:#ddd}
+.gallery-photo picture,.photo-pair picture{display:contents}
 .gallery-photo img{width:100%;height:100%;object-fit:cover;display:block;object-position:center 50%}
 .gallery-item[data-id="steam-shower"] .gallery-photo img{object-position:center top}
 .gallery-item[data-id="wine-room"] .gallery-photo img{object-position:center top;transform:scale(1.18);transform-origin:center top}
@@ -204,12 +217,18 @@ footer a{color:var(--penny);text-decoration:none}
   a.mobile-contact{display:inline-block}
   .sticky-cta{display:flex}
 }
+.sticky-cta{gap:20px}.sticky-cta a:first-child{flex:1}.sticky-cta a{letter-spacing:0}
+.vision-tray{text-decoration:none}
+@media(max-width:600px){.sticky-cta{padding:14px 16px}.sticky-cta a{font-size:.75rem}.hero-cta-primary{min-width:0;width:100%;max-width:360px;padding:18px 14px;font-size:.87rem}.hero>.mobile-contact{flex-direction:row;justify-content:center;margin-top:14px;gap:12px}.hero>.mobile-contact .btn-secondary{min-width:0;padding:10px 20px;font-size:.82rem}.vision-tray{bottom:78px}}
+.town-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.town-chip{display:inline-block;padding:10px 18px;border:1px solid var(--penny);border-radius:999px;color:var(--navy);background:#fff;text-decoration:none;font-weight:600;font-size:.88rem;transition:background .2s}
+.town-chip:hover{background:rgba(184,115,51,.12)}
 </style>
 </head>
 <body>
 
 <div class="sticky-cta">
-  <a href="tel:+17047501245">Call for a Free Estimate</a> <a href="sms:+17047501245">Text a Photo &rarr;</a>
+  <a href="estimate.html">Upload Photos &middot; Free Quote</a><a href="tel:+17047501245">Call</a><a href="sms:+17047501245">Text</a>
 </div>
 
 <nav>
@@ -217,7 +236,7 @@ footer a{color:var(--penny);text-decoration:none}
   <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
   <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
+    <a href="gallery.html">Gallery</a>
     <a href="process.html">Process</a>
     <a href="#faq">FAQ</a>
     <a href="estimate.html" class="nav-cta">Free Estimate</a>
@@ -236,9 +255,9 @@ footer a{color:var(--penny);text-decoration:none}
     <div class="hero-trust-item"><strong>Free</strong>&nbsp;Estimates</div>
     <div class="hero-trust-item"><strong>No</strong>&nbsp;Showroom Markup</div>
   </div>
-  <a href="estimate.html" class="hero-cta-primary desktop-contact">Get a Free Estimate</a>
+  <a href="estimate.html" class="hero-cta-primary">Send Photos for a Free Quote</a>
   <div class="mobile-contact">
-    <a href="tel:+17047501245" class="hero-cta-primary">Call for a Free Estimate</a>
+    <a href="tel:+17047501245" class="btn-secondary">Call</a>
     <a href="sms:+17047501245" class="btn-secondary">Text a Photo</a>
   </div>
   <p class="hero-cta-sub">No pressure. No surprises. Written price before you commit.</p>
@@ -288,11 +307,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="steam-shower">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=steam-showers" aria-label="See more Frameless Shower Doors & Steam Units"></a>
-      <img src="gallery-steam-shower-enclosure-charlotte-nc.jpg" loading="lazy" alt="Custom frameless glass steam shower enclosure Charlotte NC">
+      <a class="tile-link" href="gallery.html#frameless-showers" aria-label="See more Frameless Shower Doors & Steam Units"></a>
+      <picture><source srcset="gallery-steam-shower-enclosure-charlotte-nc.webp" type="image/webp"><img src="gallery-steam-shower-enclosure-charlotte-nc.jpg" loading="lazy" alt="Custom frameless glass steam shower enclosure Charlotte NC"></picture>
       <button class="heart-btn" onclick="toggleSave(event,'steam-shower','Frameless Shower Doors & Steam Units')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'steam-shower')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'steam-shower')"></div>
       <div class="gallery-text">
         <h3>Frameless Shower Doors & Steam Units</h3>
         <p>Whether your vision is a standard frameless shower door enclosure or a fully enclosed steam unit, we deliver the same seamless craftsmanship. Engineered with heavy-duty 1/2" (12mm) clear or low-iron, crystal-clear tempered glass for a steam-tight fit and unmatched durability.</p>
@@ -301,11 +320,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="wine-room">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=glass-wine-rooms" aria-label="See more Glass Wine Rooms"></a>
-      <img src="gallery-glass-wine-room-charlotte-nc.jpg" loading="lazy" alt="Custom glass wine room enclosure Charlotte NC">
+      <a class="tile-link" href="gallery.html#wine-rooms" aria-label="See more Glass Wine Rooms"></a>
+      <picture><source srcset="gallery-glass-wine-room-charlotte-nc.webp" type="image/webp"><img src="gallery-glass-wine-room-charlotte-nc.jpg" loading="lazy" alt="Custom glass wine room enclosure Charlotte NC"></picture>
       <button class="heart-btn" onclick="toggleSave(event,'wine-room','Glass Wine Rooms')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'wine-room')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'wine-room')"></div>
       <div class="gallery-text">
         <h3>Glass Wine Rooms</h3>
         <p>Custom Glass Wine Room Enclosures. Seamlessly blend luxury and performance with a temperature-controlled wine room. Custom-engineered using premium 1/2" (12mm) low-iron, crystal-clear tempered glass for an unobstructed, museum-quality display.</p>
@@ -314,11 +333,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="backsplash">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=painted-backsplashes" aria-label="See more Back Painted Glass Backsplashes"></a>
-      <div class="photo-pair"><img src="gallery-backpainted-glass-backsplash-charlotte-nc-1.jpg" loading="lazy" alt="White back painted glass kitchen backsplash Charlotte NC"><img src="gallery-backpainted-glass-backsplash-charlotte-nc-2.jpg" loading="lazy" alt="Back painted glass kitchen backsplash behind sink Charlotte NC"></div>
+      <a class="tile-link" href="gallery.html#back-painted-glass" aria-label="See more Back Painted Glass Backsplashes"></a>
+      <div class="photo-pair"><picture><source srcset="gallery-backpainted-glass-backsplash-charlotte-nc-1.webp" type="image/webp"><img src="gallery-backpainted-glass-backsplash-charlotte-nc-1.jpg" loading="lazy" alt="White back painted glass kitchen backsplash Charlotte NC"></picture><picture><source srcset="gallery-backpainted-glass-backsplash-charlotte-nc-2.webp" type="image/webp"><img src="gallery-backpainted-glass-backsplash-charlotte-nc-2.jpg" loading="lazy" alt="Back painted glass kitchen backsplash behind sink Charlotte NC"></picture></div>
       <button class="heart-btn" onclick="toggleSave(event,'backsplash','Back Painted Glass Backsplashes')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'backsplash')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'backsplash')"></div>
       <div class="gallery-text">
         <h3>Back Painted Glass Backsplashes</h3>
         <p>Modern White Back-Painted Glass Kitchen Backsplash. Custom-crafted from premium 1/4" (6mm) low-iron tempered glass for a seamless, true-white high-gloss finish.</p>
@@ -327,11 +346,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="mirror">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=custom-mirrors" aria-label="See more Custom Mirrors"></a>
-      <img src="gallery-custom-vanity-mirror-charlotte-nc.jpg" loading="lazy" alt="Custom bathroom vanity mirror Charlotte NC">
+      <a class="tile-link" href="gallery.html#mirrors-and-glass-shelves" aria-label="See more Custom Mirrors"></a>
+      <picture><source srcset="gallery-custom-vanity-mirror-charlotte-nc.webp" type="image/webp"><img src="gallery-custom-vanity-mirror-charlotte-nc.jpg" loading="lazy" alt="Custom bathroom vanity mirror Charlotte NC"></picture>
       <button class="heart-btn" onclick="toggleSave(event,'mirror','Custom Mirrors')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'mirror')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'mirror')"></div>
       <div class="gallery-text">
         <h3>Custom Mirrors</h3>
         <p>Custom Bathroom Vanity Mirrors. Expand your space and enhance your lighting with a custom-cut bathroom vanity mirror. Precision-engineered from premium 1/4" (6mm) clear mirror glass, our large-format installations feature flawless flat-polished edges for a clean, modern, and seamless look.</p>
@@ -340,11 +359,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="office">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=glass-office-partitions" aria-label="See more Glass Office Partitions"></a>
-      <img src="gallery-glass-office-partitions-charlotte-nc.jpg" loading="lazy" alt="Frameless glass office partitions Charlotte NC">
+      <a class="tile-link" href="gallery.html#offices-and-commercial" aria-label="See more Glass Office Partitions"></a>
+      <picture><source srcset="gallery-glass-office-partitions-charlotte-nc.webp" type="image/webp"><img src="gallery-glass-office-partitions-charlotte-nc.jpg" loading="lazy" alt="Frameless glass office partitions Charlotte NC"></picture>
       <button class="heart-btn" onclick="toggleSave(event,'office','Glass Office Partitions')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'office')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'office')"></div>
       <div class="gallery-text">
         <h3>Glass Office Partitions</h3>
         <p>Frameless Glass Office Partitions & Doors. Create open, collaborative, and sunlit workspaces with custom commercial glass partitions. Engineered with heavy-duty 1/2" (12mm) clear tempered glass and sleek minimalist hardware, our wall systems and integrated glass doors deliver maximum sound reduction without sacrificing visual connection.</p>
@@ -353,11 +372,11 @@ footer a{color:var(--penny);text-decoration:none}
 
     <div class="gallery-item" data-id="railing">
       <div class="gallery-photo">
-      <a class="tile-link" href="process.html?style=glass-railings" aria-label="See more Glass Railings"></a>
-      <img src="gallery-glass-pool-railing-charlotte-nc.jpg" loading="lazy" alt="Frameless glass pool railing Charlotte NC">
+      <a class="tile-link" href="gallery.html#glass-railings" aria-label="See more Glass Railings"></a>
+      <picture><source srcset="gallery-glass-pool-railing-charlotte-nc.webp" type="image/webp"><img src="gallery-glass-pool-railing-charlotte-nc.jpg" loading="lazy" alt="Frameless glass pool railing Charlotte NC"></picture>
       <button class="heart-btn" onclick="toggleSave(event,'railing','Glass Railings')">&#9825;</button>
       </div>
-      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" onkeydown="if(event.key==='Enter')saveComment(event,'railing')"></div>
+      <div class="comment-box"><input type="text" placeholder="What caught your eye here?" oninput="saveComment(event,'railing')"></div>
       <div class="gallery-text">
         <h3>Glass Railings</h3>
         <p>Frameless Glass Pool Railings & Fencing. Maximize your backyard views without compromising on safety. Our luxury pool surround systems utilize heavy-duty 1/2" (12mm) clear tempered glass and premium spigot mounts to deliver a sleek, code-compliant, and completely unobstructed view.</p>
@@ -410,6 +429,26 @@ footer a{color:var(--penny);text-decoration:none}
   </details>
 </section>
 
+<section class="section-wrap" id="areas">
+  <p class="section-label">Where We Work</p>
+  <h2>Areas We Serve</h2>
+  <p class="intro-text" style="margin-bottom:0">We serve these communities. Select your town to request an estimate.</p>
+  <div class="town-chips">
+    <a class="town-chip" href="shower-doors-gastonia.html" aria-label="Frameless shower doors in Gastonia, NC">Gastonia</a>
+    <a class="town-chip" href="shower-doors-belmont.html" aria-label="Frameless shower doors in Belmont, NC">Belmont</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Mount Holly">Mount Holly</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Lowell">Lowell</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in McAdenville">McAdenville</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Ranlo">Ranlo</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Bessemer City">Bessemer City</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Dallas">Dallas</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Kings Mountain">Kings Mountain</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Lake Wylie">Lake Wylie</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Shelby">Shelby</a>
+    <a class="town-chip" href="estimate.html" aria-label="Request an estimate in Charlotte">Charlotte</a>
+  </div>
+</section>
+
 </main>
 
 <footer id="contact">
@@ -423,10 +462,10 @@ footer a{color:var(--penny);text-decoration:none}
   <p style="margin-top:16px;font-size:0.72rem;color:#778aa0">&copy; Lincoln Shower Door of Charlotte. All rights reserved.</p>
 </footer>
 
-<div class="vision-tray" id="visionTray" onclick="location.href='estimate.html'">
+<a class="vision-tray" id="visionTray" href="estimate.html">
   <span class="count" id="visionCount">0</span>
   <span>Saved &mdash; view your picks</span>
-</div>
+</a>
 
 <script>
 function getSaved() {
@@ -469,7 +508,6 @@ function saveComment(evt, id) {
   const item = saved.find(s => s.id === id);
   if (item) item.comment = val;
   setSaved(saved);
-  evt.target.blur();
 }
 document.addEventListener('DOMContentLoaded', () => {
   getSaved().forEach(s => {
