@@ -102,6 +102,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://lincolnshowerdoor.com/shower-doors-lake-wylie-sc.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lincolnshowerdoor.com/shower-doors-belmont.html</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -122,4 +128,30 @@
   <url>
     <loc>https://lincolnshowerdoor.com/gallery.html</loc>
   </url>
+  <!-- blog-start -->
+  <url>
+    <loc>https://lincolnshowerdoor.com/blog/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lincolnshowerdoor.com/blog/curbless-shower-door-planning/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/blog/curbless-shower-door-planning/curbless-frameless-shower-door-installed.jpg</image:loc>
+      <image:caption>Frameless glass door on a curbless shower with a mosaic tile floor and bathroom beyond</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/blog/curbless-shower-door-planning/curbless-shower-door-metal-water-dam.jpg</image:loc>
+      <image:caption>Metal water dam bar on the floor at the bottom of a frameless glass door in a curbless shower</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lincolnshowerdoor.com/blog/curbless-shower-door-planning/crl-s1l001-tapered-threshold-water-dam.jpg</image:loc>
+      <image:caption>CRL S1L001 tapered threshold with dimensions: 3/8 inch high, 5/8 inch wide</image:caption>
+    </image:image>
+  </url>
+  <!-- blog-end -->
 </urlset>
