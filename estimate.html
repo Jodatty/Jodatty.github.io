@@ -29,6 +29,16 @@ button{margin-top:26px;background:#b87333;color:#fff;border:none;padding:16px 44
 button:hover{background:#d4956a}
 .alt{text-align:center;margin-top:20px;font-size:0.85rem;color:#667}
 .alt a{color:#b87333;font-weight:600;text-decoration:none}
+
+.photo-add{width:auto;margin:4px 0;padding:11px 18px;font-size:.85rem;text-transform:none;letter-spacing:0}
+.photo-help{margin:4px 0 8px;color:#555;font-size:.85rem;line-height:1.45}
+.photo-status{margin:8px 0;color:#405065;font-size:.85rem}
+.photo-status.error{color:#a02121}
+.photo-list{list-style:none;margin:8px 0;padding:0}
+.photo-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #e0ddd8;font-size:.85rem;overflow-wrap:anywhere}
+.photo-list .photo-remove{width:auto;margin:0;padding:6px 10px;border:1px solid #b87333;background:#fff;color:#714621;text-transform:none;letter-spacing:0;flex-shrink:0}
+.photo-list .photo-remove:hover{background:#f7eee5}
+
 </style>
 </head>
 <body>
@@ -67,7 +77,11 @@ button:hover{background:#d4956a}
     <textarea id="project" name="project" placeholder="What are you having installed? (e.g. shower door, mirror, wine room, office partition). Include rough opening dimensions if you have them, plus any preference on hardware finish or glass type. Photos below tell us the rest."></textarea>
 
     <label for="photo">Photos of your space (strongly encouraged — helps us quote accurately without a call)</label>
-    <input type="file" id="photo" name="photo" accept="image/*" multiple>
+    <p class="photo-help" id="photoHelp">Choose up to 10 photos at once. Each photo can be up to 25 MB.</p>
+    <input type="file" id="photo" name="photo" accept="image/*" multiple aria-describedby="photoHelp photoStatus">
+    <p class="photo-status" id="photoStatus" role="status" aria-live="polite"></p>
+    <ul class="photo-list" id="photoList" aria-label="Selected photos"></ul>
+    <div id="photoAttachments"></div>
 
     <input type="hidden" name="liked_styles" id="likedStylesField">
     <input type="hidden" name="hardware_preferences" id="hardwarePrefsField">
@@ -78,6 +92,54 @@ button:hover{background:#d4956a}
 </div>
 
 <script>
+// Preserve selections across picker visits while sending each photo under a distinct field name.
+(function () {
+  const picker = document.getElementById('photo');
+  const list = document.getElementById('photoList');
+  const status = document.getElementById('photoStatus');
+  const attachments = document.getElementById('photoAttachments');
+  const help = document.getElementById('photoHelp');
+  let files = [];
+  function formatSize(bytes) { return (bytes / 1024 / 1024).toFixed(1) + ' MB'; }
+  function statusText(message, error) { status.textContent = message; status.classList.toggle('error', !!error); }
+  let supported = false;
+  try { const probe = new DataTransfer(); picker.files = probe.files; supported = true; } catch (_) {}
+  if (!supported) {
+    help.textContent = 'Choose up to 10 photos at once. Each photo can be up to 25 MB. Choosing files again replaces the previous selection.';
+    picker.addEventListener('change', function () {
+      list.replaceChildren();
+      Array.from(picker.files).forEach(file => { const li = document.createElement('li'); li.textContent = file.name + ' (' + formatSize(file.size) + ')'; list.appendChild(li); });
+      statusText(picker.files.length ? picker.files.length + ' photo(s) selected.' : '', false);
+    });
+    return;
+  }
+  picker.removeAttribute('name');
+  picker.hidden = true;
+  help.textContent = 'Choose up to 10 photos. You can select several at once or add more afterward. Each photo can be up to 25 MB.';
+  const addButton = document.createElement('button'); addButton.type = 'button'; addButton.className = 'photo-add'; addButton.textContent = 'Add photos'; addButton.addEventListener('click', () => picker.click()); picker.before(addButton);
+  function render() {
+    list.replaceChildren(); attachments.replaceChildren();
+    files.forEach((file, index) => {
+      const li = document.createElement('li');
+      const label = document.createElement('span'); label.textContent = file.name + ' (' + formatSize(file.size) + ')';
+      const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'photo-remove'; remove.textContent = 'Remove'; remove.setAttribute('aria-label', 'Remove ' + file.name);
+      remove.addEventListener('click', () => { files.splice(index, 1); render(); statusText(files.length ? files.length + ' photo(s) selected.' : 'No photos selected.', false); });
+      li.append(label, remove); list.appendChild(li);
+      const upload = document.createElement('input'); upload.type = 'file'; upload.name = 'photo_' + (index + 1); upload.hidden = true; upload.tabIndex = -1;
+      const transfer = new DataTransfer(); transfer.items.add(file); upload.files = transfer.files; attachments.appendChild(upload);
+    });
+  }
+  picker.addEventListener('change', function () {
+    const incoming = Array.from(picker.files);
+    if (!incoming.length) return;
+    const total = files.concat(incoming).reduce((sum, file) => sum + file.size, 0);
+    if (files.length + incoming.length > 10) { picker.value = ''; statusText('Please select no more than 10 photos in total.', true); return; }
+    if (incoming.some(file => file.size > 25 * 1024 * 1024)) { picker.value = ''; statusText('Each photo must be 25 MB or smaller.', true); return; }
+    if (total > 95 * 1024 * 1024) { picker.value = ''; statusText('Please keep the combined photos under 95 MB.', true); return; }
+    files.push(...incoming); picker.value = ''; render(); statusText(files.length + ' photo(s) selected. You can add more.', false);
+  });
+})();
+
 function getSaved() {
   try { return JSON.parse(localStorage.getItem('lsd_saved') || '[]'); }
   catch(e) { return []; }
