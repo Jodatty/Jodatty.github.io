@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lincolnshowerdoor.com/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/process.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -79,13 +79,13 @@
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/estimate.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/shower-doors-gastonia.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -103,13 +103,13 @@
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/shower-doors-lake-wylie-sc.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/shower-doors-belmont.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -127,17 +127,18 @@
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/gallery.html</loc>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <!-- blog-start -->
   <url>
     <loc>https://lincolnshowerdoor.com/blog/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lincolnshowerdoor.com/blog/curbless-shower-door-planning/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -154,4 +155,5 @@
     </image:image>
   </url>
   <!-- blog-end -->
+  <url><loc>https://lincolnshowerdoor.com/warranty/</loc><lastmod>2026-11-02</lastmod></url>
 </urlset>
