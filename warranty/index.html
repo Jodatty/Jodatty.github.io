@@ -121,7 +121,7 @@ a.vendor:hover,a.vendor:focus-visible{border-color:#b87333;box-shadow:0 4px 14px
   <form id="claimForm" action="https://formspree.io/f/xkodjqqo" method="POST" enctype="multipart/form-data">
    <div class="two"><div><label for="c-name">Your name</label><input type="text" id="c-name" name="name" autocomplete="name" required></div>
    <div><label for="c-email">Email</label><input type="email" id="c-email" name="email" autocomplete="email" required></div></div>
-   <div class="two"><div><label for="c-phone">Phone (optional)</label><input type="tel" id="c-phone" name="phone" autocomplete="tel"></div>
+   <div class="two"><div><label for="c-phone">Phone</label><input type="tel" id="c-phone" name="phone" autocomplete="tel" required></div>
    <div><label for="c-type">Request type</label><select id="c-type" name="request_type"><option>Warranty service</option><option>Warranty transfer</option><option>Paid maintenance or replacement parts</option></select></div></div>
    <label for="c-addr">Installation address</label><input type="text" id="c-addr" name="installation_address" autocomplete="street-address" required>
    <label for="c-ref">Installation date or job number (optional)</label><input type="text" id="c-ref" name="job_reference">
@@ -129,7 +129,7 @@ a.vendor:hover,a.vendor:focus-visible{border-color:#b87333;box-shadow:0 4px 14px
    <label for="photoInput">Photos (strongly encouraged)</label>
    <label class="pick" for="photoInput">Add photos<input type="file" id="photoInput" name="photo" accept="image/*" multiple></label>
    <ul id="fileList" aria-live="polite"></ul>
-   <p class="hint">Add photos in as many batches as you like, up to 8. Large photos are resized before sending.</p>
+   <p class="hint">Add up to 8 photos. Each photo must be 25 MB or smaller, and all photos together must be under 95 MB.</p>\n   <div id="claimAttachments"></div><input type="hidden" name="_subject" value="Warranty or service request"><input type="hidden" name="request_source" value="warranty_page">
    <div class="hp" aria-hidden="true"><label>Leave blank <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
    <button type="submit" id="claimSubmit">Send Request</button>
    <p id="claimStatus" role="status" aria-live="polite"></p>
@@ -167,25 +167,15 @@ a.vendor:hover,a.vendor:focus-visible{border-color:#b87333;box-shadow:0 4px 14px
 </footer>
 <script>
 (function(){
-var ENDPOINT='https://formspree.io/f/xkodjqqo'; // estimate form endpoint; swap for a dedicated warranty form ID when created
-var MAX=8, MAXDIM=1600, files=[];
-var form=document.getElementById('claimForm'),input=document.getElementById('photoInput'),list=document.getElementById('fileList'),status=document.getElementById('claimStatus'),btn=document.getElementById('claimSubmit');
+var MAX=8,files=[];
+var form=document.getElementById('claimForm'),input=document.getElementById('photoInput'),list=document.getElementById('fileList'),status=document.getElementById('claimStatus'),attachments=document.getElementById('claimAttachments');
 function size(n){return n>1048576?(n/1048576).toFixed(1)+' MB':Math.max(1,Math.round(n/1024))+' KB'}
-function render(){list.innerHTML='';files.forEach(function(f,i){var li=document.createElement('li');var s=document.createElement('span');s.textContent=f.name+' ('+size(f.size)+')';var b=document.createElement('button');b.type='button';b.textContent='Remove';b.setAttribute('aria-label','Remove '+f.name);b.onclick=function(){files.splice(i,1);render()};li.appendChild(s);li.appendChild(b);list.appendChild(li)});}
-input.addEventListener('change',function(){var added=Array.prototype.slice.call(input.files);added.forEach(function(f){if(files.length<MAX&&!files.some(function(x){return x.name===f.name&&x.size===f.size&&x.lastModified===f.lastModified}))files.push(f)});if(files.length>=MAX&&added.length)status.textContent='Up to '+MAX+' photos per request. Text additional photos or video to 704-750-1245.';input.value='';render()});
-function shrink(f){return new Promise(function(res){if(!/^image\/(jpeg|png|webp)$/.test(f.type)){res(f);return}var u=URL.createObjectURL(f),im=new Image();im.onload=function(){var r=Math.min(1,MAXDIM/Math.max(im.width,im.height)),w=Math.round(im.width*r),h=Math.round(im.height*r),c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);URL.revokeObjectURL(u);c.toBlob(function(b){if(!b||b.size>=f.size){res(f);return}res(new File([b],f.name.replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'}))},'image/jpeg',0.82)};im.onerror=function(){URL.revokeObjectURL(u);res(f)};im.src=u})}
-form.addEventListener('submit',function(e){e.preventDefault();status.className='';status.textContent='';
- if(!form.checkValidity()){form.reportValidity();return}
- btn.disabled=true;btn.textContent='Sending...';status.textContent='Preparing your photos...';
- Promise.all(files.map(shrink)).then(function(out){
-  var fd=new FormData(form);fd.delete('photo');
-  fd.append('_subject','Warranty request: '+document.getElementById('c-type').value+' - '+document.getElementById('c-name').value);
-  out.forEach(function(f,i){fd.append('photo'+(i+1),f,f.name)});
-  var ctl=new AbortController(),t=setTimeout(function(){ctl.abort()},60000);
-  status.textContent='Sending...';
-  return fetch(ENDPOINT,{method:'POST',body:fd,headers:{'Accept':'application/json'},signal:ctl.signal}).then(function(r){clearTimeout(t);if(!r.ok)return r.json().catch(function(){return {}}).then(function(data){console.error('Warranty rejection codes:',JSON.stringify((data.errors||[]).map(function(e){return {code:e.code,field:e.field}})));throw new Error('http '+r.status)});return null});
- }).then(function(){status.className='ok';status.textContent='Thank you. Your request was sent. We aim to reply within two business days. For an emergency, call 704-750-1245.';form.reset();files=[];render();btn.textContent='Send Request'}).catch(function(err){console.error('Warranty submission failed:',err.name,err.message);status.className='err';status.textContent='Your request did not send. Please email info@lincolnshowerdoor.com with your photos, or call 704-750-1245.';btn.textContent='Send Request'}).then(function(){btn.disabled=false});
-});
+var supported=false;try{var probe=new DataTransfer();input.files=probe.files;supported=true}catch(_){}
+if(supported){input.removeAttribute('name');
+function render(){list.replaceChildren();attachments.replaceChildren();files.forEach(function(f,i){var li=document.createElement('li'),s=document.createElement('span'),b=document.createElement('button');s.textContent=f.name+' ('+size(f.size)+')';b.type='button';b.textContent='Remove';b.setAttribute('aria-label','Remove '+f.name);b.onclick=function(){files.splice(i,1);render();status.textContent=files.length+' photo(s) selected.'};li.append(s,b);list.appendChild(li);var u=document.createElement('input');u.type='file';u.name='photo_'+(i+1);u.hidden=true;u.tabIndex=-1;var d=new DataTransfer();d.items.add(f);u.files=d.files;attachments.appendChild(u)})}
+input.addEventListener('change',function(){var incoming=Array.from(input.files);if(!incoming.length)return;var all=files.concat(incoming);if(all.length>MAX||incoming.some(function(f){return f.size>25*1024*1024})||all.reduce(function(n,f){return n+f.size},0)>95*1024*1024){status.textContent='Please select no more than 8 photos, each under 25 MB and 95 MB combined.';input.value='';return}files=all;input.value='';render();status.textContent=files.length+' photo(s) selected.'})
+}else{input.addEventListener('change',function(){list.replaceChildren();Array.from(input.files).forEach(function(f){var li=document.createElement('li');li.textContent=f.name+' ('+size(f.size)+')';list.appendChild(li)});status.textContent='Choose all photos at once; choosing again replaces the previous selection.'})}
+form.addEventListener('submit',function(){document.getElementById('claimSubmit').disabled=true;status.textContent='Sending your request...'});
 var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
 t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});
 l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false')})});
